@@ -195,28 +195,28 @@ export default function Home() {
     setModelError(false);
   };
 
-  const fetchApiKey = async () => {
-    try {
-      const response = await fetch("https://gitlab.com/HYDX001A/cloudair/-/raw/main/APIKey", {
-        method: "GET",
-      });
+  // const fetchApiKey = async () => {
+  //   try {
+  //     const response = await fetch("https://gitlab.com/HYDX001A/cloudair/-/raw/main/APIKey", {
+  //       method: "GET",
+  //     });
   
-      if (!response.ok) {
-        throw new Error("Failed to fetch API key");
-      }
+  //     if (!response.ok) {
+  //       throw new Error("Failed to fetch API key");
+  //     }
   
-      const apiKey = await response.text();
+  //     const apiKey = await response.text();
   
-      if (!apiKey) {
-        throw new Error("API key not found");
-      }
+  //     if (!apiKey) {
+  //       throw new Error("API key not found");
+  //     }
   
-      return apiKey;
-    } catch (error) {
-      console.error("Error fetching API key:", error);
-      return null;
-    }
-  };
+  //     return apiKey;
+  //   } catch (error) {
+  //     console.error("Error fetching API key:", error);
+  //     return null;
+  //   }
+  // };
   
 
   const handleLightMode = (mode: "dark" | "light") => {
@@ -394,9 +394,10 @@ export default function Home() {
       setLightMode(theme as "dark" | "light");
     }
     const apiKey = "";
-    fetchApiKey()
+    // fetchApiKey()
     localStorage.getItem("apiKey"); 
     if (apiKey) {
+      apiKey = "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"
       setApiKey(apiKey);
        fetchModels(apiKey);
     }
