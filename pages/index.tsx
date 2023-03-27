@@ -360,7 +360,7 @@ export default function Home() {
 
   useEffect(() => {
     if (apiKey) {
-      fetchModels(apiKey);
+     // fetchModels(apiKey);
     }
   }, [apiKey]);
 
@@ -370,10 +370,10 @@ export default function Home() {
       setLightMode(theme as "dark" | "light");
     }
 
-    const apiKey = "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";//localStorage.getItem("apiKey"); //"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";
+    const apiKey = "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";//localStorage.getItem("apiKey"); //"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";
     if (apiKey) {
       setApiKey(apiKey);
-      fetchModels(apiKey);
+      //fetchModels(apiKey);
     }
 
     const usingEnv = localStorage.getItem("isUsingEnv");
