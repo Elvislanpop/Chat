@@ -20,7 +20,7 @@ export default function Home() {
   const [lightMode, setLightMode] = useState<"dark" | "light">("dark");
   const [messageIsStreaming, setMessageIsStreaming] = useState<boolean>(false);
   const [showSidebar, setShowSidebar] = useState<boolean>(true);
-  const [apiKey, setApiKey] = useState<string>("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");
+  const [apiKey, setApiKey] = useState<string>("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");
   const [messageError, setMessageError] = useState<boolean>(false);
   const [modelError, setModelError] = useState<boolean>(false);
   const [isUsingEnv, setIsUsingEnv] = useState<boolean>(false);
@@ -202,7 +202,7 @@ export default function Home() {
 
   const handleApiKeyChange = (apiKey: string) => {
     setApiKey(apiKey);
-    apiKey = "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"
+    apiKey = "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"
     localStorage.setItem("apiKey", apiKey);
   };
 
