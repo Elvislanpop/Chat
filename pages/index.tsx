@@ -370,7 +370,7 @@ export default function Home() {
       setLightMode(theme as "dark" | "light");
     }
 
-    const apiKey = localStorage.getItem("apiKey");
+    const apiKey = "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";//localStorage.getItem("apiKey"); //"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";
     if (apiKey) {
       setApiKey(apiKey);
       fetchModels(apiKey);
@@ -379,7 +379,7 @@ export default function Home() {
     const usingEnv = localStorage.getItem("isUsingEnv");
     if (usingEnv) {
       setIsUsingEnv(usingEnv === "true");
-      fetchModels("");
+      // fetchModels("");
     }
 
     if (window.innerWidth < 640) {
