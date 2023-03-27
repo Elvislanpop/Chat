@@ -13,7 +13,7 @@ const handler = async (req: Request): Promise<Response> => {
     const response = await fetch("https://api.openai.com/v1/models", {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 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`
+        Authorization: `Bearer ${key ? key : process.env.OPENAI_API_KEY}`
       }
     });
 
