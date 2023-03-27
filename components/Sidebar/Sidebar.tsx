@@ -28,7 +28,7 @@ interface Props {
   onImportConversations: (data: { conversations: Conversation[]; folders: ChatFolder[] }) => void;
 }
 
-export const Sidebar: FC<Props> = ({ loading, conversations, lightMode, selectedConversation, apiKey, folders, onCreateFolder, onDeleteFolder, onUpdateFolder, onNewConversation, onToggleLightMode, onSelectConversation, onDeleteConversation, onToggleSidebar, onUpdateConversation, onClearConversations, onExportConversations, onImportConversations }) => {
+export const Sidebar: FC<Props> = ({ loading, conversations, lightMode, selectedConversation, apiKey, folders, onCreateFolder, onDeleteFolder, onUpdateFolder, onNewConversation, onToggleLightMode, onSelectConversation, onDeleteConversation, onToggleSidebar, onUpdateConversation, onApiKeyChange, onClearConversations, onExportConversations, onImportConversations }) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [filteredConversations, setFilteredConversations] = useState<Conversation[]>(conversations);
 
