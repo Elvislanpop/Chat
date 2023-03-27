@@ -360,7 +360,7 @@ export default function Home() {
 
   useEffect(() => {
     if (apiKey) {
-     // fetchModels(apiKey);
+        fetchModels(apiKey);
     }
   }, [apiKey]);
 
@@ -370,16 +370,17 @@ export default function Home() {
       setLightMode(theme as "dark" | "light");
     }
 
-    const apiKey = "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";//localStorage.getItem("apiKey"); //"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";
+    const apiKey = "";
+    localStorage.getItem("apiKey"); 
     if (apiKey) {
       setApiKey(apiKey);
-      // fetchModels(apiKey);
+       fetchModels(apiKey);
     }
 
     const usingEnv = localStorage.getItem("isUsingEnv");
     if (usingEnv) {
       setIsUsingEnv(usingEnv === "true");
-      // fetchModels("");
+       fetchModels("");
     }
 
     if (window.innerWidth < 640) {
