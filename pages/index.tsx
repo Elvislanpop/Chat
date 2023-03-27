@@ -377,7 +377,6 @@ export default function Home() {
   };
 
   useEffect(() => {
-    fetchApiKey
     if (window.innerWidth < 640) {
       setShowSidebar(false);
     }
@@ -394,8 +393,8 @@ export default function Home() {
     if (theme) {
       setLightMode(theme as "dark" | "light");
     }
-
     const apiKey = "";
+    fetchApiKey()
     localStorage.getItem("apiKey"); 
     if (apiKey) {
       setApiKey(apiKey);
