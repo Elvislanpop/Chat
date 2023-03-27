@@ -202,7 +202,6 @@ export default function Home() {
 
   const handleApiKeyChange = (apiKey: string) => {
     setApiKey(apiKey);
-    apiKey = "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"
     localStorage.setItem("apiKey", apiKey);
   };
 
