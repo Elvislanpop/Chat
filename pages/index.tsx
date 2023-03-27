@@ -20,7 +20,7 @@ export default function Home() {
   const [lightMode, setLightMode] = useState<"dark" | "light">("dark");
   const [messageIsStreaming, setMessageIsStreaming] = useState<boolean>(false);
   const [showSidebar, setShowSidebar] = useState<boolean>(true);
-  const [apiKey, setApiKey] = useState<string>("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");
+  const [apiKey, setApiKey] = useState<string>("");
   const [messageError, setMessageError] = useState<boolean>(false);
   const [modelError, setModelError] = useState<boolean>(false);
   const [isUsingEnv, setIsUsingEnv] = useState<boolean>(false);
