@@ -370,10 +370,10 @@ export default function Home() {
       setLightMode(theme as "dark" | "light");
     }
 
-    const apiKey = "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";//localStorage.getItem("apiKey"); //"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";
+    const apiKey = "";//localStorage.getItem("apiKey"); //"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";
     if (apiKey) {
       setApiKey(apiKey);
-      //fetchModels(apiKey);
+      // fetchModels(apiKey);
     }
 
     const usingEnv = localStorage.getItem("isUsingEnv");
