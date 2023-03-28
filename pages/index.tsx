@@ -397,7 +397,7 @@ export default function Home() {
     // fetchApiKey()
     localStorage.getItem("apiKey"); 
     if (apiKey) {
-      apiKey = "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"
+      
       setApiKey(apiKey);
        fetchModels(apiKey);
     }
