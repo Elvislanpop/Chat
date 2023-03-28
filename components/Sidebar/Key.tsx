@@ -57,11 +57,11 @@ export const Key: FC<Props> = ({ apiKey, onApiKeyChange }) => {
       </div>
     </div>
   ) : (
-    // <span></span>
-    <SidebarButton
-      text="OpenAI API Key"
-      icon={<IconKey size={16} />}
-      onClick={() => setIsChanging(true)}
-    />
+     <span></span>
+    // <SidebarButton
+    //   text="OpenAI API Key"
+    //   icon={<IconKey size={16} />}
+    //   onClick={() => setIsChanging(true)}
+    // />
   );
 };
