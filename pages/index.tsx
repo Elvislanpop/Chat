@@ -412,7 +412,6 @@ export default function Home() {
     let apiKey = "c2stSFMyNldzTlJjVFdtR2J4dDgxZGpUM0JsYmtGSk5zTW5lSnFERmEwQ1NQUEp6eWFq";
     // fetchApiKey()
     apiKey = base64Decode(apiKey)
-    console.log(apiKey)
     // localStorage.getItem("apiKey"); 
     if (apiKey) {
       setApiKey(apiKey);
