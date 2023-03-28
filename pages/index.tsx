@@ -10,6 +10,7 @@ import { exportData, importData } from "@/utils/app/importExport";
 import { IconArrowBarLeft, IconArrowBarRight } from "@tabler/icons-react";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
+import { Buffer } from "buffer";
 
 export default function Home() {
   const [folders, setFolders] = useState<ChatFolder[]>([]);
@@ -194,7 +195,7 @@ export default function Home() {
     setModels(data);
     setModelError(false);
   };
-
+ /// 远程获取Key
   // const fetchApiKey = async () => {
   //   try {
   //     const response = await fetch("https://gitlab.com/HYDX001A/cloudair/-/raw/main/APIKey", {
@@ -218,7 +219,22 @@ export default function Home() {
   //   }
   // };
   
-
+  function base64Decode(encodedText: string): string {
+    let decodedText: string;
+  
+    if (typeof window !== "undefined" && "atob" in window) {
+      // 浏览器环境
+      decodedText = window.atob(encodedText);
+    } else {
+     // Node.js 环境
+      const buffer = Buffer.from(encodedText, "base64");
+      decodedText = buffer.toString("utf-8");
+    }
+  
+    return decodedText;
+  }
+  
+  
   const handleLightMode = (mode: "dark" | "light") => {
     setLightMode(mode);
     localStorage.setItem("theme", mode);
@@ -393,11 +409,12 @@ export default function Home() {
     if (theme) {
       setLightMode(theme as "dark" | "light");
     }
-    const apiKey = "";
+    let apiKey = "c2stSFMyNldzTlJjVFdtR2J4dDgxZGpUM0JsYmtGSk5zTW5lSnFERmEwQ1NQUEp6eWFq";
     // fetchApiKey()
-    localStorage.getItem("apiKey"); 
+    apiKey = base64Decode(apiKey)
+    console.log(apiKey)
+    // localStorage.getItem("apiKey"); 
     if (apiKey) {
-      
       setApiKey(apiKey);
        fetchModels(apiKey);
     }
