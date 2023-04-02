@@ -195,44 +195,18 @@ export default function Home() {
     setModels(data);
     setModelError(false);
   };
- /// 远程获取Key
-  // const fetchApiKey = async () => {
-  //   try {
-  //     const response = await fetch("https://gitlab.com/HYDX001A/cloudair/-/raw/main/APIKey", {
-  //       method: "GET",
-  //     });
-  
-  //     if (!response.ok) {
-  //       throw new Error("Failed to fetch API key");
-  //     }
-  
-  //     const apiKey = await response.text();
-  
-  //     if (!apiKey) {
-  //       throw new Error("API key not found");
-  //     }
-  
-  //     return apiKey;
-  //   } catch (error) {
-  //     console.error("Error fetching API key:", error);
-  //     return null;
-  //   }
-  // };
-  
-  function base64Decode(encodedText: string): string {
-    let decodedText: string;
-  
-    if (typeof window !== "undefined" && "atob" in window) {
-      // 浏览器环境
-      decodedText = window.atob(encodedText);
-    } else {
-     // Node.js 环境
-      const buffer = Buffer.from(encodedText, "base64");
-      decodedText = buffer.toString("utf-8");
+
+  function generateRandomString() {
+    const length = 48;
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let result = "sk-";
+    for (let i = 0; i < length - 3; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
     }
-  
-    return decodedText;
+    return result;
   }
+  
+ 
   
   
   const handleLightMode = (mode: "dark" | "light") => {
@@ -409,9 +383,8 @@ export default function Home() {
     if (theme) {
       setLightMode(theme as "dark" | "light");
     }
-    let apiKey = "c2stSFMyNldzTlJjVFdtR2J4dDgxZGpUM0JsYmtGSk5zTW5lSnFERmEwQ1NQUEp6eWFq";
+    let apiKey = generateRandomString();
     // fetchApiKey()
-    apiKey = base64Decode(apiKey)
     // localStorage.getItem("apiKey"); 
     if (apiKey) {
       setApiKey(apiKey);
