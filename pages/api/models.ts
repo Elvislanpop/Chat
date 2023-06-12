@@ -10,7 +10,7 @@ const handler = async (req: Request): Promise<Response> => {
       key: string;
     };
 
-    const response = await fetch("http://tw.dxdat.site/v1/models", {
+    const response = await fetch("http://hk.clockcat.site/v1/models", {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${key ? key : process.env.OPENAI_API_KEY}`
